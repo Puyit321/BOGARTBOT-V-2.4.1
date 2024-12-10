@@ -29,7 +29,7 @@ module.exports = {
 
                 try {
                     const response = await axios.get(
-                        `${global.NashBot.ENDPOINT}gpt4o?prompt=${encodeURIComponent(prompt)}&uid=1`
+                        `${global.NashBot.ENDPOINT}api/gpt-4o?q=${encodeURIComponent(prompt)}&uid=1`
                     );
 
                     const aiResponse = response.data.response;
