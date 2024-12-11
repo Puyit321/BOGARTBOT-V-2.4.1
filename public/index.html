@@ -9,45 +9,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <style>
-        .bogart {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: #000;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-    </style>
   <div id="loading">
     <div class="loading-animation">
       Loading...
     </div>
-     <div id="myModal" class="bogart">
-        <div class="modal-content">
-            <span class="close" onclick="bogartModal()">✖️</span>
-            <iframe id="myIframe" width="100%" height="600" src="session.html"></iframe>
-        </div>
-    </div>
-  </div>
   <header class="header">
     <div class="logo">
       <img src="https://i.ibb.co/tHJzvD2/1727831854697.jpg" alt="Logo">
@@ -83,9 +48,6 @@
 
         <button type="submit" class="btn-primary">Login</button>
       </form>
-      <div class="active-session-container">
-    <button class="bilat-nasaag" onclick="hideModal()">Active Sessions</button>
-</div>
       <center>
         <div id="countdownDisplay" style="display:none;"></div>
       </center>
@@ -105,22 +67,5 @@
       </div>
     </div>
   </main>
-  <script>
-        const bogart = document.getElementById('myModal');
-
-        function hideModal() {
-            bogart.style.display = 'block';
-        }
-
-        function bogartModal() {
-            bogart.style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == bogart) {
-                bogart.style.display = 'none';
-            }
-        };
-    </script>
 </body>
 </html>
