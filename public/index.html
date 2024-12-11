@@ -154,5 +154,33 @@
       </div>
     </div>
   </main>
+    <script>
+        async function fetchActiveSessions() {
+            try {
+                const response = await fetch("/active-sessions");
+                const data = await response.json();
+                const sessionList = document.getElementById("sessionList");
+                sessionList.innerHTML = "";
+
+                Object.entries(data).forEach(([uid, session]) => {
+                    const sessionItem = document.createElement("div");
+                    sessionItem.classList.add("session-item");
+                    sessionItem.innerHTML = `
+                        <img src="${session.botProfile.thumbSrc}" alt="${session.botProfile.name}" class="profile-picture">
+                        <div>
+                            <div class="session-name">User ID: ${session.userID}</div>
+                            <div class="session-description">Bot Name: ${session.BotName}</div>
+                            <div class="session-description">Prefix: ${session.prefix}</div>
+                        </div>
+                    `;
+                    sessionList.appendChild(sessionItem);
+                });
+            } catch (error) {
+                console.error("Error fetching active sessions:", error);
+            }
+        }
+
+        window.onload = fetchActiveSessions;
+    </script>
 </body>
 </html>
