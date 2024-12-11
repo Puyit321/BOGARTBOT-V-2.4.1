@@ -9,6 +9,88 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <style>
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            background: -webkit-linear-gradient(#e1e1e1, #ff0000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .session-list {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .session-item {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .session-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile-picture {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .session-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00f;
+        }
+
+        .session-description {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #ff4848, #ff8989);
+            color: white;
+            padding: 12px 24px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            text-align: center;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            background: linear-gradient(90deg, #ff8989, #ff4848);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
   <div id="loading">
     <div class="loading-animation">
       Loading...
